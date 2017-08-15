@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id='root'></div>
+	<script id='tmpl' type="text/html">
+	<ul>
+	{% for val,index in data.items }
+			<li class={{data.x === 1 ? 'yes' : 'no'}}>{{index + ':' + val}}</li>
+	{% /for }
+	</ul>
+	</script>
+	<script type="text/javascript" src='template.js'></script>
+	<script type="text/javascript">
+		var tmpl = document.getElementById('tmpl').innerHTML;
+		var markup = UTmpl(tmpl)({x: 1,items:{name: 'yoha',age: 20}}) 
+		root.innerHTML = markup
+	</script>
+</body>
+</html>
